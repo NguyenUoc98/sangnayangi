@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+use Illuminate\Notifications\Notifiable;
 use Orchid\Platform\Models\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use Notifiable;
     /**
      * The attributes that are mass assignable.
      *
@@ -35,8 +38,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'permissions'          => 'array',
-        'email_verified_at'    => 'datetime',
+        'permissions'       => 'array',
+        'email_verified_at' => 'datetime',
     ];
 
     /**
@@ -63,4 +66,18 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+
+    public function isOrderedToday() {
+        return $this->orders()->whereDate('created_at',Carbon::now())->exists();
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Order::class, 'buyer_id', 'id');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(OrderDetail::class, 'user_id', 'id');
+    }
 }

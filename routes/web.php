@@ -17,8 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::group([
+    'middleware' => 'auth'
+], function () {
+    Route::get('/dashboard', [\App\Http\Controllers\PageController::class, 'dashboard'])->name('dashboard');
+    Route::get('/orders/create', [\App\Http\Controllers\OrderController::class, 'create'])->name('orders.create')->middleware(['choosed_buyer']);
+    Route::post('/orders', [\App\Http\Controllers\OrderController::class, 'store'])->name('orders.store');
+    Route::get('/spinner', [\App\Http\Controllers\PageController::class, 'spinner'])->name('spinner')->middleware(['choosed_buyer']);
+});
 
-require __DIR__.'/auth.php';
+
+require __DIR__ . '/auth.php';
