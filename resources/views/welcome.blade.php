@@ -17,11 +17,11 @@
                    class="border border-gray-400 dark:text-gray-500 px-4 py-2 rounded-md text-gray-700 text-sm">Dashboard</a>
             @else
                 <a href="{{ route('login') }}"
-                   class="text-sm text-white font-semibold px-4 py-2 rounded-md bg-[#00a888]">Đăng nhập</a>
+                   class="text-sm text-white font-semibold px-4 py-2 rounded-md bg-primary">Đăng nhập</a>
 
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}"
-                       class="text-sm text-white font-semibold px-4 py-2 rounded-md bg-[#fa0]">Đăng ký</a>
+                       class="text-sm text-white font-semibold px-4 py-2 rounded-md bg-secondary">Đăng ký</a>
                 @endif
             @endauth
         </div>
