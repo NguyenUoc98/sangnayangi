@@ -128,7 +128,7 @@ return [
     */
 
     'template' => [
-        'header' => '',
+        'header' => 'admin_header',
         'footer' => '',
     ],
 
