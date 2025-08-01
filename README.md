@@ -1,64 +1,242 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 🍽️ Sáng Nay Ăn Gì
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Trang chủ](public/images/mockup/home_page.png)
 
-## About Laravel
+Ứng dụng web quản lý đặt đồ ăn được xây dựng bằng Laravel, giúp người dùng dễ dàng chọn người mua và đặt đồ ăn theo nhóm.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📱 Tính năng chính
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Quản lý người mua**: Chọn người mua cho từng đơn hàng
+- **Thông báo realtime**: Gửi thông báo tức thì khi có người được chọn làm người mua
+- **Đặt đồ ăn**: Giao diện trực quan để chọn món ăn
+- **Quản lý đơn hàng**: Theo dõi và quản lý các đơn hàng
+- **Giao diện admin**: Dashboard quản lý với Orchid Platform
+- **Real-time updates**: Cập nhật thời gian thực với Livewire và Pusher
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🖼️ Giao diện ứng dụng
 
-## Learning Laravel
+### Chọn người mua
+![Chọn người mua](public/images/mockup/choose_buyer_realtime.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Danh sách đơn hàng
+![Danh sách đơn hàng](public/images/mockup/list_order.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Đặt đồ ăn
+![Đặt đồ ăn](public/images/mockup/order.png)
 
-## Laravel Sponsors
+## 🛠️ Công nghệ sử dụng
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- **Backend**: Laravel 9.x
+- **Frontend**: Livewire, Tailwind CSS
+- **Admin Panel**: Orchid Platform
+- **Database**: MySQL
+- **Real-time**: Pusher
+- **Authentication**: Laravel Breeze
 
-### Premium Partners
+## 📋 Yêu cầu hệ thống
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- MySQL
+- Web server (Apache/Nginx)
 
-## Contributing
+## 🚀 Cài đặt
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone dự án**
+```bash
+git clone <repository-url>
+cd sangnayangi
+```
 
-## Code of Conduct
+2. **Cài đặt dependencies**
+```bash
+composer install
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Cấu hình môi trường**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+4. **Cấu hình database**
+```bash
+# Chỉnh sửa file .env với thông tin database
+php artisan migrate
+php artisan db:seed
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Build assets**
+```bash
+npm run build
+```
 
-## License
+6. **Khởi chạy server**
+```bash
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📁 Cấu trúc dự án
+
+```
+sangnayangi/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/     # Controllers
+│   │   ├── Livewire/        # Livewire components
+│   │   └── Middleware/      # Custom middleware
+│   ├── Models/              # Eloquent models
+│   ├── Notifications/       # Realtime notifications
+│   ├── Events/              # Broadcast events
+│   └── Orchid/              # Admin panel
+├── resources/
+│   └── views/               # Blade templates
+├── routes/                  # Route definitions
+└── database/
+    └── migrations/          # Database migrations
+```
+
+## 🔧 Cấu hình
+
+### Database
+Cấu hình database trong file `.env`:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sangnayangi
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### Pusher (Real-time)
+Cấu hình Pusher cho tính năng real-time:
+```env
+PUSHER_APP_ID=your_app_id
+PUSHER_APP_KEY=your_app_key
+PUSHER_APP_SECRET=your_app_secret
+PUSHER_HOST=
+PUSHER_PORT=443
+PUSHER_SCHEME=https
+PUSHER_APP_CLUSTER=mt1
+```
+
+## 👥 Quản lý người dùng
+
+### Vai trò
+- **Admin**: Quản lý toàn bộ hệ thống
+- **User**: Đặt đồ ăn và chọn người mua
+
+### Middleware
+- `auth`: Xác thực người dùng
+- `choosed_buyer`: Kiểm tra đã chọn người mua
+
+### Thông báo Realtime
+- **ChooseBuyer Notification**: Gửi thông báo khi có người được chọn làm người mua
+- **StartSpinner Event**: Broadcast sự kiện bắt đầu quay spinner
+- **Pusher Integration**: Sử dụng Pusher để gửi thông báo realtime
+- **Livewire Listeners**: Lắng nghe và xử lý các sự kiện realtime
+
+## 🍽️ Quản lý món ăn
+
+### Model Food
+- Tên món ăn
+- Giá cả
+- Địa chỉ
+
+### Quản lý qua Admin Panel
+- Thêm/sửa/xóa món ăn
+- Upload hình ảnh
+- Phân loại món ăn
+
+## 📊 Quản lý đơn hàng
+
+### Model Order
+- Người mua (buyer_id)
+- Tổng tiền (amount)
+- Ngày đặt (date)
+- Chi tiết đơn hàng
+
+### Trạng thái đơn hàng
+- Đang xử lý
+- Đã xác nhận
+- Đã hoàn thành
+- Đã hủy
+
+## 🔄 Workflow
+
+1. **Đăng nhập** → Trang chủ
+2. **Chọn người mua** → Middleware kiểm tra
+3. **Thông báo realtime** → Gửi thông báo cho tất cả người dùng khi có người được chọn
+4. **Đặt đồ ăn** → Chọn món và số lượng
+5. **Xác nhận đơn hàng** → Lưu vào database
+6. **Theo dõi trạng thái** → Real-time updates
+
+## 🎨 Giao diện
+
+### Responsive Design
+- Mobile-first approach
+- Tailwind CSS styling
+- Dark/Light mode support
+
+### Components
+- **Livewire Components**: 
+  - `ChooseBuyer`: Quản lý chọn người mua với realtime
+  - `OrderFood`: Giao diện đặt đồ ăn
+- **Notifications**: 
+  - `ChooseBuyer`: Thông báo khi chọn người mua
+  - `StartSpinner`: Broadcast sự kiện quay spinner
+- **Events**: 
+  - `StartSpinner`: Event broadcast realtime
+- **Blade Components**: Reusable components
+- **Custom Layouts**: Admin panel layouts
+
+## 🧪 Testing
+
+```bash
+# Chạy tests
+php artisan test
+
+# Chạy tests với coverage
+php artisan test --coverage
+```
+
+## 📦 Deployment
+
+### Production
+```bash
+# Optimize cho production
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+composer install --optimize-autoloader --no-dev
+```
+
+### Environment Variables
+Đảm bảo cấu hình đúng các biến môi trường cho production:
+- `APP_ENV=production`
+- `APP_DEBUG=false`
+- Database credentials
+- Pusher credentials
+
+## 🤝 Đóng góp
+
+1. Fork dự án
+2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Tạo Pull Request
+
+## 📄 License
+
+Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE) để biết thêm chi tiết.
+
+## 👨‍💻 Tác giả
+
+**Sáng Nay Ăn Gì** - Ứng dụng quản lý đặt đồ ăn
+
+---
+
+⭐ Nếu dự án này hữu ích, hãy cho chúng tôi một star!
